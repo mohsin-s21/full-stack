@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      min-height: 100vh;
+    }
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .sidebar img {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid white;
+    }
+    .sidebar h1 {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      width: 100%;
+    }
+    .sidebar ul li {
+      padding: 10px;
+      margin: 5px 0;
+      text-align: center;
+      background: #34495e;
+      border-radius: 4px;
+    }
+    /* Main Content */
+    .main {
+      flex: 1;
+      padding: 30px;
+      background: #f4f6f8;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    h2 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+    th {
+      background: #ecf0f1;
+    }
+    /* Project cards */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      flex: 1 1 250px;
+    }
+    .card h3 {
+      margin: 0;
+      color: #2980b9;
+    }
+    /* Contact form */
+    form input, form textarea, form button {
+      width: 100%;
+      margin: 8px 0;
+      padding: 10px;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+    }
+    form button {
+      background: #2980b9;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #1f6391;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="../FRONTENED/resources/tj.jpg" alt="My Picture">
+    <h1>Mohsin Taj</h1>
+    <ul>
+      <li>Biodata</li>
+      <li>Education</li>
+      <li>Skills</li>
+      <li>Projects</li>
+      <li>Contact</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <!-- Biodata -->
+    <div class="section">
+      <h2>Biodata</h2>
+      <p>Hello! I’m Mohsin, a budding developer passionate about coding and web technologies.</p>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+      <h2>Education</h2>
+      <ol>
+        <li>SSC</li>
+        <li>Intermediate</li>
+      </ol>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+      <h2>Skills</h2>
+      <table>
+        <tr><th>Skill</th><th>Proficiency</th></tr>
+        <tr><td>Python</td><td>Beginner</td></tr>
+        <tr><td>Java</td><td>Beginner</td></tr>
+        <tr><td>HTML/CSS</td><td>Beginner</td></tr>
+      </table>
+    </div>
+
+    <!-- Projects -->
+    <div class="section">
+      <h2>Projects</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Project Management Dashboard</h3>
+          <p>Responsive dashboard for tracking project progress with React + Node.js.</p>
+        </div>
+        <div class="card">
+          <h3>E-commerce Platform</h3>
+          <p>Secure e-commerce site with payments and authentication using Angular + Express.</p>
+        </div>
+        <div class="card">
+          <h3>Portfolio Website</h3>
+          <p>Personal portfolio optimized for SEO and mobile devices.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="section">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
