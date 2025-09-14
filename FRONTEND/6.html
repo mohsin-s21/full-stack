@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Demo with CSS</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2, h3 {
+      color: #333;
+      transition: 0.3s;
+    }
+
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
+
+    .dblclick-style {
+      background-color: orange;
+      font-family: Calibri, sans-serif;
+    }
+
+    .hover-style {
+      background-color: cyan;
+      font-style: italic;
+    }
+
+    #list {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #0083b3;
+    }
+
+    input {
+      padding: 5px;
+      margin-top: 10px;
+    }
+
+    #output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <h2>Hello jQuery</h2>
+  <h3>just for timepass</h3>
+  <button id="btn">Click Me</button>
+  <div class="temp">
+    <p>This is a different division on which we are using class tags with jQuery</p>
+  </div>
+  <input type="text" id="myInput">
+  <p id="output">Hi this text</p>
+
+  <ul id="list">
+    <li>Item 1</li>
+  </ul>
+  <button id="add">Add Item</button>
+  <button id="addf">Add Item First</button>
+  <button id="remove">Remove First</button>
+
+  <script>
+    $(document).ready(function(){
+      // Single Click
+      $("#btn").click(function(){
+        $("h2").text("Button Clicked!");
+        $("h3").text("Button Clicked! Duplicate");
+        $(".temp").addClass("highlight").removeClass("dblclick-style hover-style");
+      });
+
+      // Double Click
+      $("#btn").dblclick(function(){
+        $("h2").text("Button Clicked Twice!");
+        $("h3").text("Button Clicked Twice Duplicate");
+        $(".temp").addClass("dblclick-style").removeClass("highlight hover-style");
+      });
+
+      // Hover
+      $("#btn").hover(function(){
+        $("h2").text("Button Hovered!");
+        $("h3").text("Button Hovered Duplicate");
+        $(".temp").addClass("hover-style").removeClass("highlight dblclick-style");
+      });
+
+      // Add new list item at end
+      $("#add").click(function(){
+        $("#list").append("<li>New Item appended from script</li>");
+      });
+
+      // Add new list item at start
+      $("#addf").click(function(){
+        $("#list").prepend("<li>New Item prepended from script</li>");
+      });
+
+      // Remove first item
+      $("#remove").click(function(){
+        $("#list li:first").remove();
+      });
+
+      // Update text live
+      $("#myInput").on("input", function(){
+        let val = $(this).val();
+        $("#output").text(val);
+      });
+    });
+  </script>
+</body>
+</html>
